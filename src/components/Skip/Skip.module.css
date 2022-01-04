@@ -1,0 +1,12 @@
+.skip{
+    background-color: transparent;
+    cursor: pointer;
+    color: rgba(179, 179, 179, 0.651);
+    font-size: 18px;
+    outline: none;
+    border: none;
+}
+
+.skip:hover{
+    color: white;
+}

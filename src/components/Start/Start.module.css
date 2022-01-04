@@ -1,0 +1,21 @@
+.start {
+  background-color: rgb(240, 33, 18);
+  border: none;
+  color: white;
+  text-align: center;
+  padding: 7px 0;
+  font-size: 22px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  position: relative;
+  width: 140px;
+  top: 50%;
+  left: 50%;
+  top: 20px;
+  transform: translate(-50%, -50%);
+}
+
+.start:hover {
+  background-color: rgb(187, 61, 38);
+}

@@ -1,0 +1,17 @@
+.score{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    text-align: center;
+    margin: 0 auto 20px auto;
+}
+
+.progres{
+    margin-bottom: 14px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.values span{
+    padding: 4px;
+}

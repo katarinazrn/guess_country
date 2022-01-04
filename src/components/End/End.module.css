@@ -1,0 +1,13 @@
+.end{
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    padding: 5px;
+    text-align: center;
+    color: white;
+    font-weight: bolder;
+}
+
+.end div{
+    margin: 6px;
+}
