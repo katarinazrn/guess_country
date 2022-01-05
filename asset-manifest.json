@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/guess_country/static/css/main.da829ffa.css",
-    "main.js": "/guess_country/static/js/main.294e509c.js",
+    "main.css": "/guess_country/static/css/main.5286197d.css",
+    "main.js": "/guess_country/static/js/main.a17d41c4.js",
     "static/js/787.3be5320f.chunk.js": "/guess_country/static/js/787.3be5320f.chunk.js",
     "static/media/logo.png": "/guess_country/static/media/logo.d7c1220c738b360da48f.png",
     "static/media/correct.mp3": "/guess_country/static/media/correct.4e2b0172c6abacbf60de.mp3",
     "index.html": "/guess_country/index.html",
-    "main.da829ffa.css.map": "/guess_country/static/css/main.da829ffa.css.map",
-    "main.294e509c.js.map": "/guess_country/static/js/main.294e509c.js.map",
+    "main.5286197d.css.map": "/guess_country/static/css/main.5286197d.css.map",
+    "main.a17d41c4.js.map": "/guess_country/static/js/main.a17d41c4.js.map",
     "787.3be5320f.chunk.js.map": "/guess_country/static/js/787.3be5320f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.da829ffa.css",
-    "static/js/main.294e509c.js"
+    "static/css/main.5286197d.css",
+    "static/js/main.a17d41c4.js"
   ]
 }
