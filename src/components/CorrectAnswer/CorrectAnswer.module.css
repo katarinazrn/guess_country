@@ -1,5 +1,9 @@
 .correct{
+    position: fixed;
     color: lightcoral;
     text-align: center;
-    margin-top: 10px;
+    bottom: 12px;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    margin: 0 auto;
 }

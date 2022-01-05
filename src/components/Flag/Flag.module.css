@@ -1,12 +1,13 @@
 .flag {
-  margin: 0 auto;
+  margin: 0 auto;  
+  height: 240px;
+}
+
+.img {
+  width: 100%;
   animation-duration: 0.5s;
   animation-name: fade;
   animation-timing-function: cubic-bezier(0.26, 0.53, 0.74, 1.48);
-}
-
-.flag img {
-  width: 100%;
 }
 
 @keyframes fade {
@@ -18,4 +19,11 @@
     opacity: 1;
     transform: scale(1, 1);
   }
+}
+
+
+@media (max-width: 500px) {
+    .flag{
+      width: 90%;
+    }
 }

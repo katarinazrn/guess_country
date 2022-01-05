@@ -1,6 +1,5 @@
 import './App.css';
 import { Fragment, useEffect, useState } from 'react';
-import StartButton from './components/Start/StartButton';
 import Container from './components/UI/Container/Container';
 import Flag from './components/Flag/Flag';
 import Input from './components/Input/Input';
@@ -20,7 +19,7 @@ const App = () => {
   const [skipped, setSkipped] = useState(0);
   const [showAnswer, setShowAnswer] = useState(false);
   const [answer, setAnswer] = useState('');
-  const limit = 5;
+  const limit = 20;
 
   useEffect(() => {
     setRandomCountries();
@@ -54,10 +53,12 @@ const App = () => {
     setScore(0);
     setSkipped(0);
     setCurrentIndex(0);
+    setShowAnswer(false);
     setStatus('game');
   }
 
   const guessed = () => {
+    setShowAnswer(false);
     setCurrentIndex(prev => prev + 1);
     setScore(prev => prev + 1);
   }
@@ -68,17 +69,15 @@ const App = () => {
     setSkipped(prev => prev + 1);
     setCurrentIndex(prev => prev + 1);
 
-    const interval = setInterval(() => {
-      setShowAnswer(false);
-      setAnswer('');
-      clearInterval(interval);
-    }, 2000);
   }
 
   useEffect(() => {
     if (skipped + score == limit) {
       setCountries([]);
       setStatus('end');
+      setTimeout(() => {
+        setShowAnswer(false);
+      }, 1000);
     }
   }, [skipped, score])
 
@@ -87,12 +86,12 @@ const App = () => {
       {status === 'new' && <Landing start={start} />}
       {status === 'end' &&
         <Fragment>
-          <Logo width='35%' />
+          <Logo />
           <End start={start} score={score} limit={limit} />
         </Fragment>}
       {status === 'game' && countries[currentIndex] &&
         <Fragment>
-          <Logo width='35%' />
+          <Logo />
           <Score index={currentIndex} limit={limit} score={score} skipped={skipped} />
           <Flag url={countries[currentIndex].url} />
           <Input guessed={guessed} name={countries[currentIndex].name} />

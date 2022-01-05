@@ -1,24 +1,37 @@
-import { useState } from 'react';
+import { useEffect, useRef } from 'react';
 import classes from './Input.module.css';
+import correctSound from '../../correct.mp3';
 
 const Input = ({ guessed, name }) => {
 
-    const [input, setInput] = useState('');
+    const input = useRef();
+    var correct = new Audio(correctSound);
 
     const handleInput = e => {
-        const value = e.target.value.toUpperCase();
-        setInput(value);
+
+        input.current.value = input.current.value.toUpperCase()
+        const value = input.current.value.toUpperCase();
 
         if (value === name.toUpperCase()) {
-            setInput('');
-            guessed();
+            correct.play();
+            setTimeout(() => {
+                input.current.value = '';
+                guessed();
+            }, 600);
         }
     }
 
+    useEffect(() => {
+        input.current.value = '';
+    }, [name])
+
     return (
-        <input className={classes.input}
+        <input
+            autoFocus="autofocus"
+            className={classes.input}
             placeholder='Country name...' type='text'
-            value={input} onChange={handleInput} />
+            ref={input}
+            onChange={handleInput} />
     )
 }
 
