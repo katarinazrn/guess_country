@@ -6,7 +6,7 @@ import classes from './Landing.module.css';
 const Landing = props => {
     return (
         <Fragment>
-            <Logo width='auto' />
+            <Logo />
             <p className={classes.desc}>Guess the country by its flag</p>
             <StartButton start={props.start} />
         </Fragment>
