@@ -1,0 +1,30 @@
+.keyboard {
+  text-align: center;
+}
+
+.keyboard button {
+  background-color: rgba(34, 76, 167, 0.829);
+  font-size: 20px;
+  min-width: 30px;
+  margin: 3px;
+  height: 30px;
+  color: white;
+}
+
+.clicked{
+    box-shadow:
+    0 0 1px 0px #fff, 
+    0 0 2px 1px rgb(116, 82, 116), 
+    0 0 5px 2px #0ff;
+}
+
+#space {
+  padding: 0 40px; 
+}
+
+
+@media (max-width: 500px) {
+    .keyboard{
+        
+    }
+}

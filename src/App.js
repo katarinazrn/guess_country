@@ -9,6 +9,7 @@ import End from './components/End/End';
 import CorrectAnswer from './components/CorrectAnswer/CorrectAnswer';
 import Logo from './components/UI/Logo/Logo';
 import Landing from './components/Landing/Landing';
+import Keyboard from './components/Keyboard/Keyboard';
 
 const App = () => {
 
@@ -17,7 +18,6 @@ const App = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [score, setScore] = useState(0);
   const [skipped, setSkipped] = useState(0);
-  const [showAnswer, setShowAnswer] = useState(false);
   const [answer, setAnswer] = useState('');
   const limit = 20;
 
@@ -53,22 +53,20 @@ const App = () => {
     setScore(0);
     setSkipped(0);
     setCurrentIndex(0);
-    setShowAnswer(false);
+    setAnswer('');
     setStatus('game');
   }
 
   const guessed = () => {
-    setShowAnswer(false);
+    setAnswer('');
     setCurrentIndex(prev => prev + 1);
     setScore(prev => prev + 1);
   }
 
   const skipCountry = () => {
-    setShowAnswer(true);
     setAnswer(countries[currentIndex].name);
     setSkipped(prev => prev + 1);
     setCurrentIndex(prev => prev + 1);
-
   }
 
   useEffect(() => {
@@ -76,7 +74,7 @@ const App = () => {
       setCountries([]);
       setStatus('end');
       setTimeout(() => {
-        setShowAnswer(false);
+        setAnswer('');
       }, 1000);
     }
   }, [skipped, score])
@@ -85,20 +83,19 @@ const App = () => {
     <Container>
       {status === 'new' && <Landing start={start} />}
       {status === 'end' &&
-        <Fragment>
+        <div>
           <Logo />
           <End start={start} score={score} limit={limit} />
-        </Fragment>}
+        </div>}
       {status === 'game' && countries[currentIndex] &&
         <Fragment>
           <Logo />
           <Score index={currentIndex} limit={limit} score={score} skipped={skipped} />
           <Flag url={countries[currentIndex].url} />
-          <Input guessed={guessed} name={countries[currentIndex].name} />
-          <SkipButton skip={skipCountry} />
+          <CorrectAnswer name={answer} />
+          <Input skip={skipCountry} guessed={guessed} name={countries[currentIndex].name} />
         </Fragment>
       }
-      {showAnswer && <CorrectAnswer name={answer} />}
     </Container>
   );
 }

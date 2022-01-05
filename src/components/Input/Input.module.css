@@ -1,18 +1,37 @@
-.input{
-    margin: 15px auto;
-    width: 40%;
-    text-align: center;
-    border: none;
-    background-color: transparent;
-    color: white;
-    border-bottom: 2px solid rgba(245, 245, 245, 0.37);
-    outline: none;
-    font-size: 22px;
-    padding: 4px;
+.input {
+  margin: 15px auto;
+  width: 40%;
+  text-align: center;
+  border: none;
+  background-color: transparent;
+  color: white;
+  border-bottom: 2px solid rgba(245, 245, 245, 0.37);
+  outline: none;
+  font-size: 22px;
+  padding: 4px;
+}
+
+.keyboard {
+  display: none;
+}
+
+.in {
+  display: flex;
+  margin: 0 11px;
+  padding: 0;
+}
+
+.input {
+  width: 100%;
 }
 
 @media (max-width: 500px) {
-    .input{
-        width: 90%;
-    }
+  .inputBig {
+    display: none;
+  }
+
+  .keyboard {
+    display: flex;
+    flex-direction: column;
+  }
 }

@@ -1,6 +1,9 @@
 .flag {
   margin: 0 auto;  
   height: 240px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .img {
@@ -24,6 +27,6 @@
 
 @media (max-width: 500px) {
     .flag{
-      width: 90%;
+      max-width: 90%
     }
 }
